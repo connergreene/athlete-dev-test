@@ -1,0 +1,10 @@
+<navbar></navbar>
+<section ng-if="!viewEdit">
+	<h1> Athlete Profile Input Form </h1>
+	<athlete-form></athlete-form>
+</section>
+
+<section ng-if="viewEdit">
+	<h1> Athletes</h1>
+	<athlete-list></athlete-list>
+</section>

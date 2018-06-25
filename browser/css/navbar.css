@@ -1,0 +1,29 @@
+.navbar {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px dotted #777;
+  background-color: grey; 
+}
+
+.navbar-header {
+  width:  100%;
+  text-align: center;
+}
+
+.navbar-header > .dropdown {
+  border-color: grey;
+  margin-top: 1%;
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  float: left;
+}
+
+.navbar-header > .dropdown img:hover {
+  background-color: black;
+  border-radius: 4px 4px 0 0;
+}
+
+.navbar .dropdown-item {
+  color: black;
+}

@@ -1,0 +1,50 @@
+<div  ng-if="!editMode" class="athlete-in-list" ng-repeat="athlete in list">
+	<div>
+		<button type="button" class="btn btn-primary" ng-click="edit($index)">Edit</button>
+		<button class="del-btn btn" ng-click="delete($index)">Delete</button>
+		<h2>{{ athlete.name }}</h2>
+		Sports: <span ng-repeat="sport in athlete.sports">{{ sport }} </span> <br>
+		Date of Birth: {{ athlete.birthDate }} <br>
+		Nationality: {{ athlete.nationality }} <br>
+		Gender: {{ athlete.gender }} <br>
+		Location: {{ athlete.location }} <br>
+		Association: {{ athlete.association }} <br>
+		Team: {{ athlete.team }} <br>
+		About: {{ athlete.about }} <br>
+		Interests: <span ng-repeat="interest in athlete.interests">{{ interests }} </span> <br>
+		Charities: <span ng-repeat="charity in athlete.charities">{{ charity }} </span> <br>
+		Pets: <span ng-repeat="pet in athlete.pets">{{ pet }} </span> <br>
+		Alcohol Consumption: {{ athlete.alcoholCons }} <br>
+		Married: {{ athlete.married }} <br>
+		Social Media: <span ng-repeat="tag in athlete.socialMedia">{{ tag }} </span><br>
+	</div>
+</div>
+<div ng-if="editMode">
+	Name: <input type="text" class="form-control input-sm" placeholder="Name" ng-model="editAthlete.name" required/>
+	Sports: <dropdown-multiselect dropdown-config="config" dropdown-options="sportOptions" dropdown-trackby="Id" model="selectedSports"></dropdown-multiselect>
+	Date of Birth: <input type="text" class="form-control input-sm" ng-model="editAthlete.birthDate" required/>
+	Nationality: <input type="text" class="form-control input-sm" placeholder="Nationality" ng-model="editAthlete.nationality" required/>
+	Gender: <form ng-model="editAthlete.gender">
+		<input type="radio" name="gender" value="male" checked> Male
+		<input type="radio" name="gender" value="female"> Female
+		<input type="radio" name="gender" value="other"> Other  
+	</form>
+	Location: <input type="text" class="form-control input-sm" placeholder="Location" ng-model="editAthlete.location" required/>
+	Association: <input type="text" class="form-control input-sm" placeholder="Association" ng-model="editAthlete.association" required/>
+	Team: <input type="text" class="form-control input-sm" placeholder="Team" ng-model="editAthlete.team" required/>
+	About: <br> <textarea rows="4" cols="50" name="about" ng-model="editAthlete.about"></textarea> <br>
+	Interests: <input type="text" class="form-control input-sm" placeholder="Interests" ng-model="editAthlete.interests" required/>
+	Charities: <input type="text" class="form-control input-sm" placeholder="Charities" ng-model="editAthlete.charities" required/>
+	Pets: <input type="text" class="form-control input-sm" placeholder="Pets" ng-model="editAthlete.pets" required/>
+	Alcohol Consumption: <form ng-model="editAthlete.alcoholCons">
+							<input type="radio" name="drinking" value="yes" checked> Yes
+							<input type="radio" name="drinking" value="no"> No  
+						</form> 
+	Marital Status: <form ng-model="editAthlete.married">
+							<input type="radio" name="married" value="yes" checked> Married
+							<input type="radio" name="married" value="no"> Single  
+						</form>
+	Social Media Handles: <input type="text" class="form-control input-sm" placeholder="Social Media Handles" ng-model="editAthlete.socialMedia"/>
+	<button type="button" class="btn btn-success" ng-click="save(selectedSports)">Save</button>
+</div>
+<div ng-if="!editMode && list.length<1">No Athletes Found.</div>

@@ -1,0 +1,42 @@
+<div>
+	<uib-tabset active="model.active">
+		<uib-tab index="0" heading="Basic Info">
+			Name: <input type="text" class="form-control input-sm" placeholder="Name" ng-model="athlete.name" required/>
+			Sports:
+			<span class="sport-list" ng-repeat="selectedSport in selectedSports"> {{selectedSport.Name}} </span>
+			<dropdown-multiselect dropdown-config="config" dropdown-options="sportOptions" dropdown-trackby="Id" model="selectedSports"></dropdown-multiselect>
+			Date of Birth: <input type="date" class="form-control input-sm" placeholder="Date of Birth" ng-model="athlete.birthDate" required/>
+			Nationality: <input type="text" class="form-control input-sm" placeholder="Nationality" ng-model="athlete.nationality" required/>
+			Gender: <form ng-model="athlete.gender">
+				<input type="radio" name="gender" value="male" checked> Male
+				<input type="radio" name="gender" value="female"> Female
+				<input type="radio" name="gender" value="other"> Other  
+			</form>
+			<button type="button" class="btn btn-primary" ng-click="model.active = 1">Next</button>
+		</uib-tab>
+		<uib-tab index="1" heading="About">
+			Location: <input type="text" class="form-control input-sm" placeholder="Location" ng-model="athlete.location" required/>
+			Association: <input type="text" class="form-control input-sm" placeholder="Association" ng-model="athlete.association" required/>
+			Team: <input type="text" class="form-control input-sm" placeholder="Team" ng-model="athlete.team" required/>
+			About: <br> <textarea rows="4" cols="50" name="about" ng-model="athlete.about"></textarea> <br>
+			Interests: <input type="text" class="form-control input-sm" placeholder="Interests" ng-model="athlete.interests" required/>
+			Charities: <input type="text" class="form-control input-sm" placeholder="Charities" ng-model="athlete.charities" required/>
+			Pets: <input type="text" class="form-control input-sm" placeholder="Pets" ng-model="athlete.pets" required/>
+			Alcohol Consumption: <form ng-model="athlete.alcoholCons">
+									<input type="radio" name="drinking" value="yes" checked> Yes
+									<input type="radio" name="drinking" value="no"> No  
+								</form> 
+			Marital Status: <form ng-model="athlete.married">
+									<input type="radio" name="married" value="yes" checked> Married
+									<input type="radio" name="married" value="no"> Single  
+								</form>
+			<button type="button" class="btn btn-primary" ng-click="model.active = 2">Next</button>
+
+		</uib-tab>
+		<uib-tab index="2" heading="Social Media">
+			Social Media Handles: <input type="text" class="form-control input-sm" placeholder="Social Media Handles" ng-model="athlete.socialMedia"/>
+			<button type="button" class="btn btn-success" ng-click="submit(selectedSports)">Submit</button>
+		</uib-tab>
+	</uib-tabset>
+</div>
+

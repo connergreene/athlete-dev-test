@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>mean-template</title>
+    <base href="/">
+
+    <!--external CSS dependencies-->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/angular-dropdown-multiselect/dist/angular-dropdownMultiselect.css">
+
+    <!--local CSS dependencies-->
+    <link rel="stylesheet" href="/browser/css/main.css" />
+    <link rel="stylesheet" href="/browser/css/navbar.css" />
+    <link rel="stylesheet" href="/browser/css/home.css" />
+
+    <!--external JS dependencies-->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="/angular-dropdown-multiselect/dist/angular-dropdownMultiselect.js"></script>
+
+    <!--local JS dependencies-->
+    <script src="/browser/js/main.js"></script>
+    <script src="/browser/js/home/home.state.js"></script>
+    <script src="/browser/js/factories/athlete.factory.js"></script>
+    <script src="/browser/js/navbar/navbar.directive.js"></script>
+    <script src="/browser/js/navbar/navbar.controller.js"></script>
+    <script src="/browser/js/athlete-form/athleteForm.directive.js"></script>
+    <script src="/browser/js/athlete-form/athleteForm.controller.js"></script>
+    <script src="/browser/js/athlete-list/athleteList.directive.js"></script>
+    <script src="/browser/js/athlete-list/athleteList.controller.js"></script>
+</head>
+<body ng-app="opensponsorship-dev-test">
+    <ui-view></ui-view>
+    <footer></footer>
+</body>
+</html>
